@@ -1,0 +1,39 @@
+{
+  "name": "@stdlib/ndarray-base-ind",
+  "version": "0.0.0",
+  "description": "Return an index given an index mode.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./index.mjs",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/ndarray-base-ind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdtypes",
+    "types",
+    "base",
+    "ndarray",
+    "index",
+    "idx",
+    "ind",
+    "subscript",
+    "wrap",
+    "clamp",
+    "multidimensional",
+    "array",
+    "utilities",
+    "utility",
+    "utils",
+    "util"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
