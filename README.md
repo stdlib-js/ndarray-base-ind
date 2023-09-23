@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.1.0-deno/mod.js';
 ```
 
 #### ind( idx, max, mode )
@@ -120,7 +120,7 @@ idx = ind( -1, 9, 'clamp' );
 
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.1.0-deno/mod.js';
 
 var modes;
 var mode;
