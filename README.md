@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@esm/index.mjs';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.1.1-esm/index.mjs';
 ```
 
 #### ind( idx, max, mode )
@@ -125,7 +125,7 @@ idx = ind( -1, 9, 'clamp' );
 <script type="module">
 
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@esm/index.mjs';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.1.1-esm/index.mjs';
 
 var modes;
 var mode;
