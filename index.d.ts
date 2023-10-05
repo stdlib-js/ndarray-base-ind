@@ -1,7 +1,7 @@
-/**
+/*
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2021 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,25 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var clampIndex = require( '@stdlib/ndarray-base-clamp-index' );
-var wrapIndex = require( '@stdlib/ndarray-base-wrap-index' );
-var format = require( '@stdlib/error-tools-fmtprodmsg' );
+import { Mode } from '@stdlib/types/ndarray';
 
-
-// MAIN //
 
 /**
 * Returns an index given an index mode.
 *
-* @param {integer} idx - index
-* @param {NonNegativeInteger} max - maximum index
-* @param {string} mode - specifies how to handle an index outside the interval `[0,max]`
-* @throws {RangeError} index out-of-bounds
-* @returns {integer} index
+* @param idx - index
+* @param max - maximum index
+* @param mode - specifies how to handle an index outside the interval `[0,max]`
+* @throws index out-of-bounds
+* @returns index
 *
 * @example
 * var idx = ind( 2, 9, 'clamp' );
@@ -66,20 +62,9 @@ var format = require( '@stdlib/error-tools-fmtprodmsg' );
 * idx = ind( -1, 9, 'throw' );
 * // throws <RangeError>
 */
-function ind( idx, max, mode ) {
-	if ( mode === 'clamp' ) {
-		return clampIndex( idx, max );
-	}
-	if ( mode === 'wrap' ) {
-		return wrapIndex( idx, max );
-	}
-	if ( idx < 0 || idx > max ) {
-		throw new RangeError( format( 'invalid argument. Index must be on the interval: [0, %d]. Value: `%d`.', max, idx ) );
-	}
-	return idx;
-}
+declare function ind( idx: number, max: number, mode: Mode ): number;
 
 
 // EXPORTS //
 
-module.exports = ind;
+export = ind;
