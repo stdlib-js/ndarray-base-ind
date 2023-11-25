@@ -45,38 +45,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-base-ind
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-ind = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var ind = require( 'path/to/vendor/umd/ndarray-base-ind/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.ind;
-})();
-</script>
+var ind = require( '@stdlib/ndarray-base-ind' );
 ```
 
 #### ind( idx, max, mode )
@@ -96,11 +88,12 @@ idx = ind( 10, 9, 'throw' );
 // throws <RangeError>
 ```
 
-The function supports the following `modes`:
+The function supports the following modes:
 
--   `throw`: specifies that the function should throw an error when an index is outside the interval `[0,max]`.
--   `wrap`: specifies that the function should wrap around an index using modulo arithmetic.
--   `clamp`: specifies that the function should set an index less than `0` to `0` (minimum index) and set an index greater than `max` to `max`.
+-   **throw**: specifies that the function should throw an error when an index is outside the interval `[0, max]`.
+-   **normalize**: specifies that the function should normalize negative indices and throw an error when an index is outside the interval `[-max-1, max]`.
+-   **wrap**: specifies that the function should wrap around an index using modulo arithmetic.
+-   **clamp**: specifies that the function should set an index less than `0` to `0` (minimum index) and set an index greater than `max` to `max`.
 
 ```javascript
 var idx = ind( 2, 9, 'wrap' );
@@ -120,6 +113,12 @@ idx = ind( 10, 9, 'clamp' );
 
 idx = ind( -1, 9, 'clamp' );
 // returns 0
+
+idx = ind( 2, 9, 'normalize' );
+// returns 2
+
+idx = ind( -4, 9, 'normalize' );
+// returns 6
 ```
 
 </section>
@@ -142,14 +141,9 @@ idx = ind( -1, 9, 'clamp' );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var ind = require( '@stdlib/ndarray-base-ind' );
 
 var modes;
 var mode;
@@ -165,11 +159,6 @@ for ( i = 0; i < 100; i++ ) {
     out = ind( idx, 9, mode );
     console.log( '%d => %s(%d,%d) => %d', idx, mode, 0, 9, out );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
