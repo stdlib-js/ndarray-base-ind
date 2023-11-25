@@ -1,0 +1,4 @@
+// Copyright (c) 2023 The Stdlib Authors. License is Apache-2.0: http://www.apache.org/licenses/LICENSE-2.0
+/// <reference types="./index.d.ts" />
+import r from"https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-clamp-index@v0.1.1-esm/index.mjs";import e from"https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-wrap-index@v0.1.1-esm/index.mjs";import t from"https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-normalize-index@v0.1.0-esm/index.mjs";import n from"https://cdn.jsdelivr.net/gh/stdlib-js/error-tools-fmtprodmsg@v0.1.1-esm/index.mjs";function s(s,d,i){var a;if("clamp"===i)return r(s,d);if("wrap"===i)return e(s,d);if(a=s,"normalize"===i&&(a=t(a,d)),a<0||a>d)throw new RangeError(n("invalid argument. Index must resolve to a value on the interval: [0, %d]. Value: `%d`.",d,s));return a}export{s as default};
+//# sourceMappingURL=index.mjs.map
