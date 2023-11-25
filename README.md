@@ -45,14 +45,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-base-ind
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@esm/index.mjs';
+var ind = require( '@stdlib/ndarray-base-ind' );
 ```
 
 #### ind( idx, max, mode )
@@ -70,17 +86,9 @@ idx = ind( -1, 9, 'throw' );
 
 idx = ind( 10, 9, 'throw' );
 // throws <RangeError>
-```
 
-The function supports the following modes:
-
--   **throw**: specifies that the function should throw an error when an index is outside the interval `[0, max]`.
--   **normalize**: specifies that the function should normalize negative indices and throw an error when an index is outside the interval `[-max-1, max]`.
--   **wrap**: specifies that the function should wrap around an index using modulo arithmetic.
--   **clamp**: specifies that the function should set an index less than `0` to `0` (minimum index) and set an index greater than `max` to `max`.
-
-```javascript
-var idx = ind( 2, 9, 'wrap' );
+// Wrapping indices around using modulo arithmetic:
+idx = ind( 2, 9, 'wrap' );
 // returns 2
 
 idx = ind( 10, 9, 'wrap' );
@@ -89,6 +97,7 @@ idx = ind( 10, 9, 'wrap' );
 idx = ind( -1, 9, 'wrap' );
 // returns 9
 
+// Clamping indices to first and last indices:
 idx = ind( 2, 9, 'clamp' );
 // returns 2
 
@@ -98,12 +107,35 @@ idx = ind( 10, 9, 'clamp' );
 idx = ind( -1, 9, 'clamp' );
 // returns 0
 
+// Normalizing negative indices:
 idx = ind( 2, 9, 'normalize' );
 // returns 2
 
 idx = ind( -4, 9, 'normalize' );
 // returns 6
 ```
+
+#### ind.factory( mode )
+
+Returns a function for returning an index according to a provided index `mode`.
+
+```javascript
+var fcn = ind.factory( 'clamp' );
+
+var idx = fcn( 2, 9 );
+// returns 2
+
+idx = fcn( 10, 9 );
+// returns 9
+
+idx = fcn( -1, 9 );
+// returns 0
+```
+
+The function returns a function accepts the following arguments:
+
+-   **index**: input index.
+-   **max**: maximum index value.
 
 </section>
 
@@ -112,6 +144,15 @@ idx = ind( -4, 9, 'normalize' );
 <!-- Package usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 <section class="notes">
+
+## Notes
+
+-   Both functions support the following modes:
+
+    -   **throw**: specifies that the function should throw an error when an index is outside the interval `[0, max]`.
+    -   **normalize**: specifies that the function should normalize negative indices and throw an error when an index is outside the interval `[-max-1, max]`.
+    -   **wrap**: specifies that the function should wrap around an index using modulo arithmetic.
+    -   **clamp**: specifies that the function should set an index less than `0` to `0` (minimum index) and set an index greater than `max` to `max`.
 
 </section>
 
@@ -125,14 +166,9 @@ idx = ind( -4, 9, 'normalize' );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var ind = require( '@stdlib/ndarray-base-ind' );
 
 var modes;
 var mode;
@@ -148,10 +184,6 @@ for ( i = 0; i < 100; i++ ) {
     out = ind( idx, 9, mode );
     console.log( '%d => %s(%d,%d) => %d', idx, mode, 0, 9, out );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -183,7 +215,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
