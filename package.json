@@ -39,7 +39,7 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/ndarray-base-assert-is-index-mode": "^0.2.1",
+    "@stdlib/ndarray-base-assert-is-index-mode": "^0.2.2",
     "@stdlib/ndarray-base-clamp-index": "^0.2.2",
     "@stdlib/ndarray-base-normalize-index": "^0.2.2",
     "@stdlib/ndarray-base-wrap-index": "^0.2.2",
