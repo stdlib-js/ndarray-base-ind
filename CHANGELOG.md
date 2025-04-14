@@ -4,7 +4,19 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-03-31)
+## Unreleased (2025-04-14)
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#6663](https://github.com/stdlib-js/stdlib/issues/6663)
+
+</section>
+
+<!-- /.issues -->
 
 <section class="commits">
 
@@ -12,6 +24,7 @@
 
 <details>
 
+-   [`9485c2b`](https://github.com/stdlib-js/stdlib/commit/9485c2b14a159557d8d097c2cfbd106db12a2210) - **chore:** fix EditorConfig lint errors (issue #6663) [(#6672)](https://github.com/stdlib-js/stdlib/pull/6672) _(by Dipjyoti Das)_
 -   [`6e9f42e`](https://github.com/stdlib-js/stdlib/commit/6e9f42e4c912485d9896eaa16c88b70fd3688e97) - **docs:** harmonize list formatting in repl.txt and ensure starting newline _(by Philipp Burckhardt)_
 
 </details>
@@ -24,8 +37,9 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
+-   Dipjyoti Das
 -   Philipp Burckhardt
 
 </section>
