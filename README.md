@@ -52,13 +52,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ndarray-base-ind/tags). For example,
+
+```javascript
 import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
 ```
 
 #### ind( idx, max, mode )
@@ -158,7 +163,7 @@ The function returns a function accepts the following arguments:
 
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
 
 var modes;
 var mode;
