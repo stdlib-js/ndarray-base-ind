@@ -52,13 +52,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
 ```
 
 #### ind( idx, max, mode )
@@ -158,7 +158,7 @@ The function returns a function accepts the following arguments:
 
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
-import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@deno/mod.js';
+import ind from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ind@v0.2.3-deno/mod.js';
 
 var modes;
 var mode;
